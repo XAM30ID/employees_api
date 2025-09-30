@@ -1,0 +1,270 @@
+/* ===== CSS RESET ===== */
+/* Сброс стандартных стилей для всех элементов */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+
+/* HTML5 display-role reset для старых браузеров */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+    display: block;
+}
+
+html {
+    height: 100%;
+}
+
+body {
+    line-height: 1;
+}
+
+/* Убираем маркеры у списков */
+ol, ul {
+    list-style: none;
+}
+
+/* Убираем кавычки у цитат */
+blockquote, q {
+    quotes: none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+    content: '';
+    content: none;
+}
+
+/* Сбрасываем стили таблиц */
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+
+/* Подключение кастомных шрифтов */
+@font-face {
+    font-family: 'Montserrat-Regular';
+    src: url("../assets/fonts/Montserrat-Regular.ttf");
+}
+
+@font-face {
+    font-family: 'Montserrat-Bold';
+    src: url("../assets/fonts/Montserrat-Bold.ttf");
+}
+
+/* Глобальные настройки шрифта */
+* {
+    font-family: 'Montserrat-Regular';
+}
+
+html {
+    position: relative;
+}
+
+/* ===== LAYOUT ===== */
+/* Основные layout-стили */
+.default-wrapper {
+    padding: 0 10vw; /* Отступы по бокам 10% от ширины viewport */
+}
+
+.main-header {
+    margin-top: 50px;
+    padding-top: 20px;   
+}
+
+/* ===== SEARCH COMPONENT ===== */
+/* Стили для поискового компонента */
+.input-container {
+    position: relative;
+}
+
+.search-field {
+    width: 100%;
+    font-size: 24px;
+    padding: 10px 15px;
+    border: 1px #D4DEFE solid;
+    border-radius: 100px;
+    transition-duration: .1s;
+    box-sizing: border-box;
+}
+
+.search-field:focus {
+    outline: none;
+    border: 2px #432EAB solid;
+}
+
+.search-button {
+    position: absolute;
+    right: -0;
+    top: 6px;
+    border: none;
+    background-color: transparent;
+    transition-duration: .1s;
+}
+
+.search-button:hover {
+    cursor: pointer;
+}
+
+.search-button:active {
+    scale: .95;
+}
+
+.search-icon {
+    fill: #432EAB;
+    height: 30px;
+    margin-top: 2px;
+}
+
+/* ===== EMPLOYEES SECTION ===== */
+/* Стили для секции сотрудников */
+.employees-section {
+    margin-top: 30px;
+}
+
+.employees {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    row-gap: 30px;
+}
+
+.employee-card {
+    padding: 24px;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.2);
+    border-radius: 16px;
+    width: 28%;
+    aspect-ratio: 1/1; /* Соотношение сторон 1:1 */
+    transition-duration: .2s;
+}
+
+.employee-card:hover {
+    cursor: pointer;
+    box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.3);
+}
+
+.employee-card:active {
+    scale: .95;
+}
+
+.employee-fullname {
+    font-family: 'Montserrat-Bold';
+    font-size: 24px;
+}
+
+.employee-info {
+    margin-top: 24px;
+    display: flex;
+    gap: 14px;
+    align-items: center;
+}
+
+.employee-info-text {
+    font-family: 'Montserrat-Regular';
+    font-size: 14px;
+    color: #8189A3;
+}
+
+/* ===== USER POPUP MODAL ===== */
+/* Стили для модального окна с детальной информацией о пользователе */
+.user-more-info-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5); /* Затемненный фон */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.user-more-info-container:hover {
+    cursor: pointer;
+}
+
+.user-more-info-card {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    max-width: 500px;
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+.user-more-info-card:hover {
+    cursor: default; /* Курсор по умолчанию внутри карточки */
+}
+
+.user-top-part {
+    display: flex;
+    justify-content: space-between;
+}
+
+.user-close-button {
+    background-color: transparent;
+    border: none;
+    width: fit-content;
+    height: fit-content;
+}
+
+.user-close-button:hover {
+    cursor: pointer;
+}
+
+.user-more-name {
+    font-size: 24px;
+    font-family: 'Montserrat-Bold';
+}
+
+.user-more-info {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+.user-more-item {
+    display: flex;
+    font-size: 18px;
+    font-family: 'Montserrat-Regular';
+    gap: 40px;
+}
+
+.user-more-item-title {
+    width: 30%; /* Фиксированная ширина для заголовков */
+}
+
+.user-more-item-text {
+    font-size: 16px;
+    color: #8189A3;
+    align-self: flex-end;
+}
+
+.user-more-addit {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    font-family: 'Montserrat-Regular';
+    font-size: 18px;
+    line-height: 18px;
+}
